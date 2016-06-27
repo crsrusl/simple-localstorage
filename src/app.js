@@ -105,5 +105,3 @@ class LS {
         return this._save();
     }
 }
-
-let store = new LS('ppt');
