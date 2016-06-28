@@ -37,7 +37,7 @@ When strict is true, all keys/values in the query object must match a record in 
 
 The findById method takes a record ID as a parameter, this ID is used to retrieve a record from the store.
 
-### Deleted a record
+### Deleting a record
 
     store.deleteById('prp12avqy2bksspccygejy29s8');
 
