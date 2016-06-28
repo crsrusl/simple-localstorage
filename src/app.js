@@ -6,7 +6,7 @@ class LS {
     }
 
     /**
-     * Returns an ID which is used for new records and undefined localstorage store name
+     * Returns an ID which is used for new records or undefined localstorage store name
      * @returns {String}
      * @private
      */
