@@ -121,8 +121,7 @@ var LS = function () {
         key: "findById",
         value: function findById(id) {
             this.store = JSON.parse(localStorage.getItem(this.name));
-            var results = this.store[id];
-            return results;
+            return this.store[id];
         }
 
         /**
@@ -138,9 +137,18 @@ var LS = function () {
             delete this.store[id];
             return this._save();
         }
+
+        /**
+         * Updates a single record matched by ID
+         * @param {String} id - The ID used to find the record to update
+         * @param {Object} update - The object used to update to record
+         * @returns {*}
+         */
+
     }, {
-        key: "updateOne",
-        value: function updateOne(id, update) {
+        key: "updateOneById",
+        value: function updateOneById(id, update) {
+            delete update.id;
             this.store[id] = Object.assign(this.findById(id), update);
             return this._save();
         }

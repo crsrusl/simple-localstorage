@@ -2,7 +2,7 @@ module.exports = function (grunt) {
     require("load-grunt-tasks")(grunt);
 
     grunt.initConfig({
-        "babel": {
+        babel: {
             options: {
                 sourceMap: true
             },
@@ -11,9 +11,19 @@ module.exports = function (grunt) {
                     "dist/app.js": "src/app.js"
                 }
             }
+        },
+        uglify: {
+            simpleLocalStorage: {
+                options: {
+                    sourceMap: true
+                },
+                files: {
+                    'dist/app.min.js': ['dist/app.js']
+                }
+            }
         }
     });
 
-    grunt.registerTask("default", ["babel"]);
+    grunt.registerTask("default", ["babel", "uglify"]);
 
 };

@@ -89,8 +89,7 @@ class LS {
      */
     findById(id) {
         this.store = JSON.parse(localStorage.getItem(this.name));
-        const results = this.store[id];
-        return results;
+        return this.store[id];
     }
 
     /**
@@ -111,8 +110,8 @@ class LS {
      * @returns {*}
      */
     updateOneById(id, update) {
+        delete update.id;
         this.store[id] = Object.assign(this.findById(id), update);
         return this._save();
-
     }
 }
