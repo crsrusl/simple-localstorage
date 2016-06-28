@@ -1,5 +1,4 @@
 # Simple LocalStorage
-## A simple localstorage db.
 
 ### Creating a new localstorage db
 
