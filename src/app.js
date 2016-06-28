@@ -1,4 +1,4 @@
-class LS {
+class SLS {
     constructor(name) {
         this.name = name || this._generateID();
         this.store = {};
@@ -27,7 +27,7 @@ class LS {
      * @param {Object} obj - The object to create
      * @returns {*}
      */
-    create(obj) {
+    createOne(obj) {
         const id = this._generateID();
         obj.id = id;
 

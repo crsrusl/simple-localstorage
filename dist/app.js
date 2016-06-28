@@ -4,9 +4,9 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var LS = function () {
-    function LS(name) {
-        _classCallCheck(this, LS);
+var SLS = function () {
+    function SLS(name) {
+        _classCallCheck(this, SLS);
 
         this.name = name || this._generateID();
         this.store = {};
@@ -20,7 +20,7 @@ var LS = function () {
      */
 
 
-    _createClass(LS, [{
+    _createClass(SLS, [{
         key: "_generateID",
         value: function _generateID() {
             return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
@@ -44,8 +44,8 @@ var LS = function () {
          */
 
     }, {
-        key: "create",
-        value: function create(obj) {
+        key: "createOne",
+        value: function createOne(obj) {
             var id = this._generateID();
             obj.id = id;
 
@@ -154,6 +154,6 @@ var LS = function () {
         }
     }]);
 
-    return LS;
+    return SLS;
 }();
 //# sourceMappingURL=app.js.map
