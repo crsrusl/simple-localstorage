@@ -14,7 +14,7 @@ var LS = function () {
     }
 
     /**
-     * Returns an ID which is used for new records and undefined localstorage store name
+     * Returns an ID which is used for new records or undefined localstorage store name
      * @returns {String}
      * @private
      */
@@ -122,7 +122,6 @@ var LS = function () {
         value: function findById(id) {
             this.store = JSON.parse(localStorage.getItem(this.name));
             var results = this.store[id];
-            this.store = {};
             return results;
         }
 
@@ -137,6 +136,12 @@ var LS = function () {
         value: function deleteById(id) {
             this.store = JSON.parse(localStorage.getItem(this.name));
             delete this.store[id];
+            return this._save();
+        }
+    }, {
+        key: "updateOne",
+        value: function updateOne(id, update) {
+            this.store[id] = Object.assign(this.findById(id), update);
             return this._save();
         }
     }]);
