@@ -97,9 +97,29 @@ class SLS {
      * @param {String} id - The ID used to find the record to delete
      * @returns {*}
      */
-    deleteById(id) {
+    deleteOneById(id) {
         this.store = JSON.parse(localStorage.getItem(this.name));
         delete this.store[id];
+        return this._save();
+    }
+
+    /**
+     * Deletes records matched by query
+     * @param {Object} query - The query used to find the records to delete
+     * @param {Boolean} strict - If 'true' the entire query object will need to match the record
+     * @returns {*}
+     */
+    deleteByQuery(query, strict = false) {
+        const results = this.findByQuery(query, strict).map((result) => {
+            return result.id;
+        });
+
+        for (let idKey in results) {
+            if (results.hasOwnProperty(idKey)) {
+                let id = results[idKey];
+                delete this.store[id];
+            }
+        }
         return this._save();
     }
 

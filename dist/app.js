@@ -131,10 +131,35 @@ var SLS = function () {
          */
 
     }, {
-        key: "deleteById",
-        value: function deleteById(id) {
+        key: "deleteOneById",
+        value: function deleteOneById(id) {
             this.store = JSON.parse(localStorage.getItem(this.name));
             delete this.store[id];
+            return this._save();
+        }
+
+        /**
+         * Deletes records matched by query
+         * @param {Object} query - The query used to find the records to delete
+         * @param {Boolean} strict - If 'true' the entire query object will need to match the record
+         * @returns {*}
+         */
+
+    }, {
+        key: "deleteByQuery",
+        value: function deleteByQuery(query) {
+            var strict = arguments.length <= 1 || arguments[1] === undefined ? false : arguments[1];
+
+            var results = this.findByQuery(query, strict).map(function (result) {
+                return result.id;
+            });
+
+            for (var idKey in results) {
+                if (results.hasOwnProperty(idKey)) {
+                    var id = results[idKey];
+                    delete this.store[id];
+                }
+            }
             return this._save();
         }
 
