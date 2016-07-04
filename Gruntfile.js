@@ -21,6 +21,15 @@ module.exports = function (grunt) {
                     'dist/app.min.js': ['dist/app.js']
                 }
             }
+        },
+        watch: {
+            scripts: {
+                files: ['src/app.js'],
+                tasks: ['default'],
+                options: {
+                    spawn: false,
+                }
+            }
         }
     });
 
