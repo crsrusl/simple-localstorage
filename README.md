@@ -36,11 +36,17 @@ When strict is true, all keys/values in the query object must match a record in 
 
 The findById method takes a record ID as a parameter, this ID is used to retrieve a record from the store.
 
-### Deleting a record
+### Deleting a record by ID
 
     store.deleteById('prp12avqy2bksspccygejy29s8');
 
-The deleteById method takes a record ID as a parameter, this ID is used to delete a record from the store.
+### Deleting a record by query
+
+    store.deleteByQuery({name:"John Smith}, true);
+
+The deleteByQuery takes 2 parameters. The first parameter is the query object, the second parameter is a boolean which toggles 'strict' search of the store.
+ 
+When strict is true, all keys/values in the query object must match a record in the store in order for it to be deleted. When strict is false, it will delete all records which have at least 1 matching key/value in the query object. 
 
 ### Updating an existing record
 
