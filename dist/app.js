@@ -56,13 +56,23 @@ var SLS = function () {
 
         /**
          * Returns all records in localstorage
-         * @returns {Object}
+         * @returns {Array}
          */
 
     }, {
         key: "findAll",
         value: function findAll() {
-            return JSON.parse(localStorage.getItem(this.name));
+            var results = [];
+
+            this.store = JSON.parse(localStorage.getItem(this.name));
+
+            for (var recordKey in this.store) {
+                if (this.store.hasOwnProperty(recordKey)) {
+                    results.push(this.store[recordKey]);
+                }
+            }
+
+            return results;
         }
 
         /**

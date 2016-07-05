@@ -38,10 +38,20 @@ class SLS {
 
     /**
      * Returns all records in localstorage
-     * @returns {Object}
+     * @returns {Array}
      */
     findAll() {
-        return JSON.parse(localStorage.getItem(this.name));
+        let results = [];
+
+        this.store = JSON.parse(localStorage.getItem(this.name));
+
+        for (let recordKey in this.store) {
+            if (this.store.hasOwnProperty(recordKey)) {
+                results.push(this.store[recordKey])
+            }
+        }
+
+        return results;
     }
 
     /**
