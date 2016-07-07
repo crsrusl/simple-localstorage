@@ -1,5 +1,6 @@
 {
   "name": "simple-localstorage",
+  "version": "1.0.1",
   "description": "A simple localstorage db",
   "main": "index.js",
   "authors": [
