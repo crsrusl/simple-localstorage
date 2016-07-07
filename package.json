@@ -1,7 +1,7 @@
 {
   "name": "simple-localstorage",
-  "version": "0.0.1",
-  "description": "a simple localstorage db",
+  "version": "1.0.0",
+  "description": "A simple localstorage db",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
