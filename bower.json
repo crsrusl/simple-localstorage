@@ -1,0 +1,22 @@
+{
+  "name": "simple-localstorage",
+  "description": "A simple localstorage db",
+  "main": "index.js",
+  "authors": [
+    "Chris Russell <hello@chrisrussell.co>"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "localstorage",
+    "database",
+    "json"
+  ],
+  "homepage": "https://github.com/crsrusl/simple-localstorage",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
